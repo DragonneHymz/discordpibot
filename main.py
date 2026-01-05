@@ -15,8 +15,8 @@ def findPiAtMicroCenter():
 
 if __name__=='__main__':
     client = discord.Client()
-    webhook= Webhook.from_url('***REMOVED***', adapter=RequestsWebhookAdapter())
     load_dotenv()
+    webhook= Webhook.from_url(os.getenv('DISCORD_WEBHOOK_URL'), adapter=RequestsWebhookAdapter())
     @client.event
     async def on_message(message):
         if message.author == client.user:
